@@ -1,0 +1,21 @@
+@use "root.scss" as *;
+
+body {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+#canvas {
+	width: calc(200% / 3);
+	height: 100%;
+
+	flex: 0 1 auto;
+}
+
+#controls {
+	width: calc(100% / 3);
+	height: 100%;
+
+	flex: 0 3 auto;
+}

@@ -1,0 +1,13 @@
+.vscode/
+LICENSE
+README.md
+Dockerfile
+docker-compose.yaml
+.gitignore
+.dockerignore
+.git/
+.parcel-cache/
+node_modules/
+package*.json
+dist/
+tsconfig.json
