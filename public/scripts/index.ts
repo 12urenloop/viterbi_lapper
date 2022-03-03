@@ -146,6 +146,39 @@ function draw_probabilities(
 	}
 }
 
+function make_probability_table(probabilites: Probabilities, thead: HTMLTableSectionElement, tbody: HTMLTableSectionElement) {
+	const teams: string[] = Object.keys(probabilites);
+	const sectors: string[] = Object.keys(Object.values(probabilites)[0]);
+
+	// Sector names header
+	const header_row = document.createElement("tr");
+	const spacer = document.createElement("th");
+	spacer.innerHTML = "&nbsp";
+	header_row.appendChild(spacer);
+	for (const sector of sectors) {
+		const header = document.createElement("th");
+		header.innerText = sector;
+		header_row.appendChild(header);
+	}
+	thead.appendChild(header_row);
+
+	// Per-team probabilities
+	for (const team of teams) {
+		const row = document.createElement("tr");
+		const team_header = document.createElement("td");
+		team_header.innerText = team;
+		row.appendChild(team_header);
+
+		for (const probability of Object.values(probabilites[team])) {
+			const prob_data = document.createElement("td");
+			prob_data.innerText = probability.toString();
+			row.appendChild(prob_data);
+		}
+
+		tbody.appendChild(row);
+	}
+}
+
 async function main() {
 	const cvs = <HTMLCanvasElement>document.getElementById("canvas");
 	const ctx = cvs.getContext("2d")!;
@@ -226,6 +259,11 @@ async function main() {
 	}
 
 	draw_probabilities(ctx, hex2rgb(background), team_colors, sector_interval_map, team_interval_map, prb);
+	make_probability_table(
+		prb,
+		document.getElementsByTagName("thead")[0],
+		document.getElementsByTagName("tbody")[0],
+	);
 }
 
 window.onload = main;
