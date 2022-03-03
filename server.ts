@@ -2,8 +2,6 @@ import * as log from "https://deno.land/std@0.127.0/log/mod.ts";
 
 import { Application } from "https://deno.land/x/oak@v10.4.0/mod.ts";
 
-const PORT = parseInt(Deno.env.get("PORT") ?? "3000");
-
 // Configure logger
 await log.setup({
 	handlers: {
@@ -36,7 +34,7 @@ app.use(async (ctx, next) => {
 
 app.addEventListener("listen", () => {
 	const date = new Date(Date.now()).toISOString();
-	log.info(`${date} viterbi_lapper started on http://localhost:${PORT}`);
+	log.info(`${date} viterbi_lapper started on http://localhost`);
 });
 
 /* Request Handlers */
@@ -52,4 +50,4 @@ app.use(async (ctx, next) => {
 	}
 });
 
-await app.listen({ port: PORT });
+await app.listen({ port: 80 });
