@@ -7,6 +7,9 @@ FROM node:alpine AS build
 WORKDIR /viterbi_lapper
 
 RUN npm i -D parcel
+RUN npm i -D @parcel/transformer-sass
+RUN npm i -D @parcel/transformer-webmanifest
+RUN npm i -D @parcel/packager-raw-url
 
 # Copy over static files
 COPY ./public/ ./public/
