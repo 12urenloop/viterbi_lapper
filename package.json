@@ -1,4 +1,8 @@
 {
+	"scripts": {
+		"lint": "npx eslint --fix ./public/**/*.ts server.ts",
+		"serve": "npx parcel serve public/index.html"
+	},
 	"devDependencies": {
 		"@parcel/packager-raw-url": "^2.3.2",
 		"@parcel/transformer-sass": "^2.3.2",
