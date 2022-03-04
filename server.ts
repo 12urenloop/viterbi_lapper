@@ -10,9 +10,9 @@ await log.setup({
 	loggers: {
 		default: {
 			level: "DEBUG",
-			handlers: ["console"]
-		}
-	}
+			handlers: ["console"],
+		},
+	},
 });
 const logger = log.getLogger();
 
@@ -26,9 +26,9 @@ app.use(async (ctx, next) => {
 
 	const date = new Date(Date.now()).toISOString();
 	const user_agent = ctx.request.headers.get("User_Agent");
-	const method = ctx.request.method;
-	const url = ctx.request.url;
-	const status = ctx.response.status;
+	const { method } = ctx.request;
+	const { url } = ctx.request;
+	const { status } = ctx.response;
 	logger.info(`${date} ${user_agent} ${method} ${url} ${status}`);
 });
 
