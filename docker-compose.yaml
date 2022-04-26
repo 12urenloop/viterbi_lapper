@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+    visualiser:
+        build:
+            context: .
+        container_name: visualiser
+        restart: unless-stopped
+        ports:
+            - "1234:80"

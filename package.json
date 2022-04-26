@@ -1,0 +1,18 @@
+{
+  "name": "viterbi_visualiser",
+  "version": "0.1.0",
+  "description": "Visualiser for the Viterbi lappers probability data",
+  "scripts": {
+	  "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/12urenloop/viterbi_visualiser.git"
+  },
+  "author": "12urenloop",
+  "license": "MIT",
+  "homepage": "https://github.com/12urenloop/viterbi_visualiser#readme",
+  "devDependencies": {
+    "typescript": "^4.6.3"
+  }
+}
