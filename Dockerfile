@@ -4,7 +4,6 @@ FROM node:alpine AS build
 WORKDIR /viterbi_visualiser/
 
 COPY package.json .
-COPY package-lock.json .
 
 RUN npm i
 
