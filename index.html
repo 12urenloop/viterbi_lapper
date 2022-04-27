@@ -11,7 +11,7 @@
 		<title>Viterbi Visualiser</title>
 	</head>
 	<body>
-		<div class="wrapper">
+		<div class="svg-wrapper">
 			<svg
 				xmlns="https://www.w3.org/2000/svg"
 				fill="none"
@@ -22,6 +22,10 @@
 			>
 				<g fill="none" stroke="black" stroke-width="4px"></g>
 			</svg>
+		</div>
+		<div class="selector-wrapper">
+			<select onchange="update_current_id()" name="team-selector" id="team-selector">
+			</select>
 		</div>
 	</body>
 </html>
